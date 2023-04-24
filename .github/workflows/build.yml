@@ -23,7 +23,7 @@ jobs:
         # The matrix will produce one job for each configuration
         # parameter of type `arduino-platform`, in this case, it
         # is only 1.
-        arduino-platform: ["arduino:avr", "teensy:avr"]
+        arduino-platform: ["arduino:mbed_nano", "teensy:avr"]
         # This is usually optional but we need to statically define the
         # FQBN of the boards we want to test for each platform. In the
         # future the CLI might automatically detect and download the core
@@ -32,8 +32,8 @@ jobs:
         include:
           # This works like this: when the platformn is "arduino:avr", the
           # variable `fqbn` is set to "arduino:avr:uno".
-          - arduino-platform: "arduino:avr"
-            fqbn: "arduino:avr:uno"
+          - arduino-platform: "arduino:mbed_nano"
+            fqbn: "arduino:mbed_nano:nano33ble"
           - arduino-platform: "teensy:avr"
             fqbn: "teensy:avr:teensy41:usb=serial,speed=600,opt=o2std,keys=en-us"
 
