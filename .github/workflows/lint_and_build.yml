@@ -50,7 +50,7 @@ jobs:
       - name: Lint
         uses: arduino/arduino-lint-action@v1
         with:
-          path: ./
+          path: ./Blink
           project-type: sketch
 
       # We use the `arduino/setup-arduino-cli` action to install and
