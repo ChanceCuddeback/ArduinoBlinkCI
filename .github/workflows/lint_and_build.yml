@@ -46,11 +46,14 @@ jobs:
       # First of all, we clone the repo using the `checkout` action.
       - name: Checkout
         uses: actions/checkout@v3
+        
+      - name: Lint
+        uses: arduino/arduino-lint-action@v1
 
       # We use the `arduino/setup-arduino-cli` action to install and
       # configure the Arduino CLI on the system.
       - name: Setup Arduino CLI
-        uses: arduino/setup-arduino-cli@master
+        uses: arduino/setup-arduino-cli@v1
       
       
       # We then install the platform, which one will be determined
