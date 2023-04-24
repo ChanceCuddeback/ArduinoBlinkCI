@@ -49,6 +49,9 @@ jobs:
         
       - name: Lint
         uses: arduino/arduino-lint-action@v1
+        with:
+          path: ./
+          project-type: sketch
 
       # We use the `arduino/setup-arduino-cli` action to install and
       # configure the Arduino CLI on the system.
@@ -64,8 +67,7 @@ jobs:
           arduino-cli core install ${{ matrix.arduino-platform }} --additional-urls https://www.pjrc.com/teensy/td_156/package_teensy_index.json
           
       - name: Install libraries
-        run: |
-          arduino-cli lib install ArduinoBLE
+        run: arduino-cli lib install ArduinoBLE
           
       # Finally, we compile the sketch, using the FQBN that was set
       # in the build matrix.
