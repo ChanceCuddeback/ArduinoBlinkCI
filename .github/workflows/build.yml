@@ -35,7 +35,7 @@ jobs:
           - arduino-platform: "arduino:avr"
             fqbn: "arduino:avr:uno"
           - arduino-platform: "teensy:avr"
-            fqbn: "teensy:avr:41:usb=serial,speed=600,opt=o2std,keys=en-us"
+            fqbn: "teensy:avr:teensy41:usb=serial,speed=600,opt=o2std,keys=en-us"
 
     # This is the platform GitHub will use to run our workflow,
     # I picked ubuntu.
