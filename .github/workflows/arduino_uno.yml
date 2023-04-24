@@ -37,18 +37,18 @@ jobs:
 
     # This is the platform GitHub will use to run our workflow,
     # I picked ubuntu.
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     # This is the list of steps this job will run.
     steps:
       # First of all, we clone the repo using the `checkout` action.
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@v3
 
       # We use the `arduino/setup-arduino-cli` action to install and
       # configure the Arduino CLI on the system.
       - name: Setup Arduino CLI
-        uses: arduino/setup-arduino-cli@latest
+        uses: arduino/setup-arduino-cli@1
       
       
       # We then install the platform, which one will be determined
