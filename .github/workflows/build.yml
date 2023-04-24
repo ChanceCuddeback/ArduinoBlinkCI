@@ -57,8 +57,8 @@ jobs:
       # dynamically by the build matrix.
       - name: Install platform
         run: |
-          arduino-cli core update-index
-          arduino-cli core install ${{ matrix.arduino-platform }}
+          arduino-cli  core update-index --additional-urls https://www.pjrc.com/teensy/td_156/package_teensy_index.json
+          arduino-cli core install ${{ matrix.arduino-platform }} --additional-urls https://www.pjrc.com/teensy/td_156/package_teensy_index.json
       # Finally, we compile the sketch, using the FQBN that was set
       # in the build matrix.
       - name: Compile Sketch
